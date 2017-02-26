@@ -7,6 +7,7 @@
 //
 
 #import "VSCBluetoothHelper.h"
+#import "VSCVescHelper.h"
 
 @interface VSCBluetoothHelper ()
 
@@ -117,14 +118,19 @@
                 NSLog(@"Found TX service");
                 self.txCharacteristic = aChar;
                 
-                if (self.rxCharacteristic != nil) [self UART_Ready];
+                if (self.rxCharacteristic != nil){
+                    [self onVescConnectionReady];
+                }
                 
             } else if ([aChar.UUID isEqual:[CBUUID UUIDWithString:RX_CHARACTERISTIC_UUID]]) {
                 NSLog(@"Found RX service");
                 self.rxCharacteristic = aChar;
                 [self.vescPeripheral setNotifyValue:YES forCharacteristic:_rxCharacteristic];
                 
-                if (self.txCharacteristic != nil) [self UART_Ready];
+                if (self.txCharacteristic != nil) {
+                    [self onVescConnectionReady];
+                }
+                
             }
         }
         
@@ -146,20 +152,56 @@
 
 // Invoked when you retrieve a specified characteristic's value, or when the peripheral device notifies your app that the characteristic's value has changed.
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    if (error) {
+        NSLog(@"Error receiving notification for characteristic %@: %@", characteristic, error);
+        [self setStatus:VSCBluetoothStatusError];
+        return;
+    }
+    
+    VSCVescHelper *vescHelper = [VSCVescHelper sharedInstance];
+    
+    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:TX_CHARACTERISTIC_UUID]]) { // 1
+        // TX
+        NSLog(@"TX update value");
+        
+    } else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RX_CHARACTERISTIC_UUID]]) {
+        // RX
+        
+        if ([vescHelper processIncomingBytes:characteristic.value] > 0) {
+            struct bldcMeasure values = [vescHelper processReadPacket];
+            
+            NSData *myData = [NSData dataWithBytes:&values length:sizeof(values)];
+            
+            // Add this VESC data, with Date as an array
+            [vescHelper.dataArray addObject:@[[NSDate date], myData]];
+            
+            if (self.delegate != nil && [self.delegate respondsToSelector:@selector(onReceivedNewVescData:)]) {
+                [self.delegate onReceivedNewVescData:myData];
+            }
+            
+            if (values.fault_code == FAULT_CODE_NO_DATA) {
+                NSLog(@"Error");
+                [self setStatus:VSCBluetoothStatusError];
+            } else {
+                NSLog(@"RPM: %ld", values.rpm);
+            }
+        }
+    }
     
 }
 
-- (void) UART_Ready {
-//    [self.statusLabel setText:@"Bluetooth OK and UART Ready"];
-    [self performSelector:@selector(doGetValues) withObject:nil afterDelay:0.3];
+- (void)onVescConnectionReady {
+    [self setStatus:VSCBluetoothStatusReady];
 }
 
-- (void) doGetValues {
-    NSLog(@"Get Values");
-    //    NSData *dataToSend = [_aVescController dataForGetValues:COMM_GET_VALUES val:0];
-    //    if (dataToSend && _txCharacteristic) [_UARTPeripheral writeValue:dataToSend forCharacteristic:_txCharacteristic type:CBCharacteristicWriteWithResponse];
-    //
-    //    if (isRecording) [self performSelector:@selector(getValuesTimeOut) withObject:nil afterDelay:3.0];
+#pragma mark - Setters
+
+-(void)setStatus:(VSCBluetoothStatus)status {
+    _status = status;
+    
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(onBluetoothStatusChanged:)]) {
+        [self.delegate onBluetoothStatusChanged:status];
+    }
 }
 
 

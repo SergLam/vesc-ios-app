@@ -17,14 +17,32 @@
 #define DEVICE_INFO_UUID @"180A"
 #define HARDWARE_REVISION_UUID @"2A27"
 
+typedef NS_ENUM(NSInteger, VSCBluetoothStatus) {
+    VSCBluetoothStatusDisconnected,
+    VSCBluetoothStatusConnected,
+    VSCBluetoothStatusError,
+    VSCBluetoothStatusReady
+};
+
+@protocol VSCBluetoothHelper;
+
 @interface VSCBluetoothHelper : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 
 + (VSCBluetoothHelper *) sharedInstance;
+
+@property (nonatomic) VSCBluetoothStatus status;
+@property (nonatomic, assign) id <VSCBluetoothHelper> delegate;
 
 @property (nonatomic, strong) CBCentralManager *centralManager;
 @property (nonatomic, strong) CBPeripheral     *vescPeripheral;
 
 @property (nonatomic, strong) CBCharacteristic *txCharacteristic;
 @property (nonatomic, strong) CBCharacteristic *rxCharacteristic;
+@end
 
+
+@protocol VSCBluetoothHelper <NSObject>
+@optional
+-(void)onBluetoothStatusChanged:(VSCBluetoothStatus)status;
+-(void)onReceivedNewVescData:(NSData *)data;
 @end
