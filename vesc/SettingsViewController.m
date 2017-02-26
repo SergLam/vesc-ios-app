@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  SecondViewController.m
 //  vesc
 //
 //  Created by Rene Sijnke on 26/02/2017.
 //  Copyright © 2017 Rene Sijnke. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "SettingsViewController.h"
 
-@interface FirstViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation SettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

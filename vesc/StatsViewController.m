@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  FirstViewController.m
 //  vesc
 //
 //  Created by Rene Sijnke on 26/02/2017.
 //  Copyright © 2017 Rene Sijnke. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "StatsViewController.h"
 
-@interface SecondViewController ()
+@interface StatsViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation StatsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
