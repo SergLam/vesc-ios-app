@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +22,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="0.0 Volts" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="118.5" y="313" width="138.5" height="42"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="0.0 V" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                <rect key="frame" x="20" y="20" width="148" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="nbB-7G-gRi"/>
+                                    <constraint firstAttribute="width" constant="148" id="tOr-CI-bDA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="0.0 A" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hkl-56-AO3">
+                                <rect key="frame" x="211" y="20" width="148" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="Hkk-zK-w4m"/>
+                                    <constraint firstAttribute="width" constant="148" id="bH5-oh-27T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="0.0 °C" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Oh8-6B-IPd">
+                                <rect key="frame" x="20" y="167" width="148" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="A4S-3w-0sQ"/>
+                                    <constraint firstAttribute="height" constant="137" id="n8a-v1-VYN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="0.0 km/h" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qb7-oV-BVH">
+                                <rect key="frame" x="211" y="167" width="148" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="Vyh-0V-UjI"/>
+                                    <constraint firstAttribute="height" constant="137" id="XOh-FR-oWC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="0.0 %" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="3LC-pv-HuT">
+                                <rect key="frame" x="20" y="314" width="148" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="nRL-kg-4eT"/>
+                                    <constraint firstAttribute="height" constant="137" id="ryP-FM-JBe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,18 +75,30 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="Oh8-6B-IPd" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="10" id="0gc-e6-oGi"/>
+                            <constraint firstItem="Oh8-6B-IPd" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="4" id="91a-HQ-541"/>
+                            <constraint firstItem="Qb7-oV-BVH" firstAttribute="top" secondItem="hkl-56-AO3" secondAttribute="bottom" constant="10" id="BwP-MB-Ksp"/>
+                            <constraint firstItem="hkl-56-AO3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="EDs-hz-0rP"/>
+                            <constraint firstItem="3LC-pv-HuT" firstAttribute="top" secondItem="Oh8-6B-IPd" secondAttribute="bottom" constant="10" id="QyF-Xl-cIR"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="V23-i6-Cbh"/>
+                            <constraint firstItem="3LC-pv-HuT" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="4" id="kk2-vc-NsN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qb7-oV-BVH" secondAttribute="trailing" id="rot-Ih-dtq"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="4" id="xFf-ay-N66"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hkl-56-AO3" secondAttribute="trailing" id="xkO-3X-0qu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="ampsLabel" destination="hkl-56-AO3" id="Kl0-hY-JJn"/>
+                        <outlet property="batteryLabel" destination="3LC-pv-HuT" id="nRU-6P-um4"/>
+                        <outlet property="celciusLabel" destination="Oh8-6B-IPd" id="HgW-9M-chc"/>
+                        <outlet property="speedLabel" destination="Qb7-oV-BVH" id="taD-hF-RZF"/>
                         <outlet property="voltsLabel" destination="KQZ-1w-vlD" id="fK6-I6-jJQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
         <!--Config-->
         <scene sceneID="wg7-f3-ORb">
