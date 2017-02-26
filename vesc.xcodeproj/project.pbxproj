@@ -16,6 +16,7 @@
 		367277961E62F21E004EED03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 367277941E62F21E004EED03 /* LaunchScreen.storyboard */; };
 		367277A11E62F21E004EED03 /* vescTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 367277A01E62F21E004EED03 /* vescTests.m */; };
 		367277AC1E62F21E004EED03 /* vescUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 367277AB1E62F21E004EED03 /* vescUITests.m */; };
+		36AE6E9D1E63045D00BE724D /* VSCBluetoothHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AE6E9C1E63045D00BE724D /* VSCBluetoothHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		367277A71E62F21E004EED03 /* vescUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vescUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		367277AB1E62F21E004EED03 /* vescUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vescUITests.m; sourceTree = "<group>"; };
 		367277AD1E62F21E004EED03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36AE6E9B1E63045D00BE724D /* VSCBluetoothHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCBluetoothHelper.h; path = Helpers/VSCBluetoothHelper.h; sourceTree = "<group>"; };
+		36AE6E9C1E63045D00BE724D /* VSCBluetoothHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCBluetoothHelper.m; path = Helpers/VSCBluetoothHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +107,10 @@
 		367277821E62F21E004EED03 /* vesc */ = {
 			isa = PBXGroup;
 			children = (
+				36AE6EA01E63048A00BE724D /* ui */,
+				36AE6E9E1E63047300BE724D /* helpers */,
 				367277861E62F21E004EED03 /* AppDelegate.h */,
 				367277871E62F21E004EED03 /* AppDelegate.m */,
-				367277891E62F21E004EED03 /* StatsViewController.h */,
-				3672778A1E62F21E004EED03 /* StatsViewController.m */,
-				3672778C1E62F21E004EED03 /* SettingsViewController.h */,
-				3672778D1E62F21E004EED03 /* SettingsViewController.m */,
 				3672778F1E62F21E004EED03 /* Main.storyboard */,
 				367277921E62F21E004EED03 /* Assets.xcassets */,
 				367277941E62F21E004EED03 /* LaunchScreen.storyboard */,
@@ -143,6 +144,42 @@
 				367277AD1E62F21E004EED03 /* Info.plist */,
 			);
 			path = vescUITests;
+			sourceTree = "<group>";
+		};
+		36AE6E9E1E63047300BE724D /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				36AE6E9F1E63048400BE724D /* bluetooth */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		36AE6E9F1E63048400BE724D /* bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				36AE6E9B1E63045D00BE724D /* VSCBluetoothHelper.h */,
+				36AE6E9C1E63045D00BE724D /* VSCBluetoothHelper.m */,
+			);
+			name = bluetooth;
+			sourceTree = "<group>";
+		};
+		36AE6EA01E63048A00BE724D /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				36AE6EA11E63049300BE724D /* viewcontrollers */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
+		36AE6EA11E63049300BE724D /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				367277891E62F21E004EED03 /* StatsViewController.h */,
+				3672778A1E62F21E004EED03 /* StatsViewController.m */,
+				3672778C1E62F21E004EED03 /* SettingsViewController.h */,
+				3672778D1E62F21E004EED03 /* SettingsViewController.m */,
+			);
+			name = viewcontrollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +320,7 @@
 			files = (
 				3672778E1E62F21E004EED03 /* SettingsViewController.m in Sources */,
 				367277881E62F21E004EED03 /* AppDelegate.m in Sources */,
+				36AE6E9D1E63045D00BE724D /* VSCBluetoothHelper.m in Sources */,
 				3672778B1E62F21E004EED03 /* StatsViewController.m in Sources */,
 				367277851E62F21E004EED03 /* main.m in Sources */,
 			);
