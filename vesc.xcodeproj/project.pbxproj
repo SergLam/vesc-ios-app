@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3636921E1E697150007FCCC2 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3636921D1E697150007FCCC2 /* TripsViewController.m */; };
+		363692211E697325007FCCC2 /* VSCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363692201E697325007FCCC2 /* VSCViewController.m */; };
 		367277851E62F21E004EED03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 367277841E62F21E004EED03 /* main.m */; };
 		367277881E62F21E004EED03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 367277871E62F21E004EED03 /* AppDelegate.m */; };
 		3672778B1E62F21E004EED03 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3672778A1E62F21E004EED03 /* StatsViewController.m */; };
@@ -19,6 +21,8 @@
 		36A48C291E6328BF00F03A70 /* VSCStatsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A48C281E6328BF00F03A70 /* VSCStatsHelper.m */; };
 		36AE6E9D1E63045D00BE724D /* VSCBluetoothHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AE6E9C1E63045D00BE724D /* VSCBluetoothHelper.m */; };
 		36AE6EA51E63077900BE724D /* VSCVescHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AE6EA41E63077900BE724D /* VSCVescHelper.m */; };
+		36E0E14C1E686DDD00B19096 /* VSCUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E0E14B1E686DDD00B19096 /* VSCUIHelper.m */; };
+		36E991F21E671E580082361F /* VSCStatsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E991F11E671E580082361F /* VSCStatsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3636921C1E697150007FCCC2 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripsViewController.h; sourceTree = "<group>"; };
+		3636921D1E697150007FCCC2 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripsViewController.m; sourceTree = "<group>"; };
+		3636921F1E697325007FCCC2 /* VSCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCViewController.h; sourceTree = "<group>"; };
+		363692201E697325007FCCC2 /* VSCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCViewController.m; sourceTree = "<group>"; };
 		367277801E62F21E004EED03 /* vesc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vesc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		367277841E62F21E004EED03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		367277861E62F21E004EED03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +71,10 @@
 		36AE6E9C1E63045D00BE724D /* VSCBluetoothHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCBluetoothHelper.m; path = Helpers/VSCBluetoothHelper.m; sourceTree = "<group>"; };
 		36AE6EA31E63077900BE724D /* VSCVescHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCVescHelper.h; path = Helpers/VSCVescHelper.h; sourceTree = "<group>"; };
 		36AE6EA41E63077900BE724D /* VSCVescHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCVescHelper.m; path = Helpers/VSCVescHelper.m; sourceTree = "<group>"; };
+		36E0E14A1E686DDD00B19096 /* VSCUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCUIHelper.h; sourceTree = "<group>"; };
+		36E0E14B1E686DDD00B19096 /* VSCUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCUIHelper.m; sourceTree = "<group>"; };
+		36E991F01E671E580082361F /* VSCStatsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCStatsView.h; sourceTree = "<group>"; };
+		36E991F11E671E580082361F /* VSCStatsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCStatsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +169,8 @@
 			children = (
 				36AE6EA21E63076700BE724D /* vesc */,
 				36AE6E9F1E63048400BE724D /* bluetooth */,
+				36E0E14A1E686DDD00B19096 /* VSCUIHelper.h */,
+				36E0E14B1E686DDD00B19096 /* VSCUIHelper.m */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -173,6 +187,7 @@
 		36AE6EA01E63048A00BE724D /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				36E991EF1E671E460082361F /* views */,
 				36AE6EA11E63049300BE724D /* viewcontrollers */,
 			);
 			name = ui;
@@ -185,6 +200,10 @@
 				3672778A1E62F21E004EED03 /* StatsViewController.m */,
 				3672778C1E62F21E004EED03 /* SettingsViewController.h */,
 				3672778D1E62F21E004EED03 /* SettingsViewController.m */,
+				3636921C1E697150007FCCC2 /* TripsViewController.h */,
+				3636921D1E697150007FCCC2 /* TripsViewController.m */,
+				3636921F1E697325007FCCC2 /* VSCViewController.h */,
+				363692201E697325007FCCC2 /* VSCViewController.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -198,6 +217,15 @@
 				36AE6EA41E63077900BE724D /* VSCVescHelper.m */,
 			);
 			name = vesc;
+			sourceTree = "<group>";
+		};
+		36E991EF1E671E460082361F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				36E991F01E671E580082361F /* VSCStatsView.h */,
+				36E991F11E671E580082361F /* VSCStatsView.m */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,11 +366,15 @@
 			files = (
 				3672778E1E62F21E004EED03 /* SettingsViewController.m in Sources */,
 				36A48C291E6328BF00F03A70 /* VSCStatsHelper.m in Sources */,
+				363692211E697325007FCCC2 /* VSCViewController.m in Sources */,
 				36AE6EA51E63077900BE724D /* VSCVescHelper.m in Sources */,
 				367277881E62F21E004EED03 /* AppDelegate.m in Sources */,
 				36AE6E9D1E63045D00BE724D /* VSCBluetoothHelper.m in Sources */,
 				3672778B1E62F21E004EED03 /* StatsViewController.m in Sources */,
 				367277851E62F21E004EED03 /* main.m in Sources */,
+				3636921E1E697150007FCCC2 /* TripsViewController.m in Sources */,
+				36E991F21E671E580082361F /* VSCStatsView.m in Sources */,
+				36E0E14C1E686DDD00B19096 /* VSCUIHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

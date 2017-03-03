@@ -21,7 +21,8 @@ typedef NS_ENUM(NSInteger, VSCBluetoothStatus) {
     VSCBluetoothStatusDisconnected,
     VSCBluetoothStatusConnected,
     VSCBluetoothStatusError,
-    VSCBluetoothStatusReady
+    VSCBluetoothStatusReady,
+    VSCBluetoothStatusScanning
 };
 
 @protocol VSCBluetoothHelper;

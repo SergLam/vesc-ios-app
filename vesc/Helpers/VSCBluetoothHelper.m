@@ -73,27 +73,45 @@
     
 }
 
+//-(void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+//    
+//    [self setStatus:VSCBluetoothStatusDisconnected];
+//    
+//    self.txCharacteristic = nil;
+//    self.rxCharacteristic = nil;
+//    self.vescPeripheral = nil;
+//    [[VSCVescHelper sharedInstance] resetPacket];
+//    
+//    // Start scanning for it again
+//    [self.centralManager scanForPeripheralsWithServices:self.services options:nil];
+//    [self setStatus:VSCBluetoothStatusScanning];
+//}
+
 // method called whenever the device state changes.
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
     
     // Determine the state of the peripheral
     if ([central state] == CBManagerStatePoweredOff) {
         NSLog(@"CoreBluetooth BLE hardware is powered off");
+        [self setStatus:VSCBluetoothStatusError];
     }
     else if ([central state] == CBManagerStatePoweredOn) {
         NSLog(@"CoreBluetooth BLE hardware is powered on and ready");
         [self.centralManager scanForPeripheralsWithServices:self.services options:nil];
-//        self.statusLabel.text = @"Scanning...";
-        NSLog(@"Scanning....");
+        NSLog(@"%@", self.services);
+        [self setStatus:VSCBluetoothStatusScanning];
     }
     else if ([central state] == CBManagerStateUnauthorized) {
         NSLog(@"CoreBluetooth BLE state is unauthorized");
+        [self setStatus:VSCBluetoothStatusError];
     }
     else if ([central state] == CBManagerStateUnknown) {
         NSLog(@"CoreBluetooth BLE state is unknown");
+        [self setStatus:VSCBluetoothStatusError];
     }
     else if ([central state] == CBManagerStateUnsupported) {
         NSLog(@"CoreBluetooth BLE hardware is unsupported on this platform");
+        [self setStatus:VSCBluetoothStatusError];
     }
     
 }
@@ -182,8 +200,6 @@
             if (values.fault_code == FAULT_CODE_NO_DATA) {
                 NSLog(@"Error");
                 [self setStatus:VSCBluetoothStatusError];
-            } else {
-                NSLog(@"RPM: %ld", values.rpm);
             }
         }
     }

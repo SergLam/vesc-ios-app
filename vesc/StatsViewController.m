@@ -10,15 +10,19 @@
 #import "VSCBluetoothHelper.h"
 #import "VSCVescHelper.h"
 #import "VSCStatsHelper.h"
+#import "VSCStatsView.h"
 
+#import "VSCUIHelper.h"
 
 @interface StatsViewController ()<VSCBluetoothHelper>
 
-@property (weak, nonatomic) IBOutlet UILabel *batteryLabel;
-@property (weak, nonatomic) IBOutlet UILabel *speedLabel;
-@property (weak, nonatomic) IBOutlet UILabel *ampsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *voltsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *celciusLabel;
+@property (weak, nonatomic) IBOutlet VSCStatsView *voltsView;
+@property (weak, nonatomic) IBOutlet VSCStatsView *ampsView;
+@property (weak, nonatomic) IBOutlet VSCStatsView *celcuisView;
+@property (weak, nonatomic) IBOutlet VSCStatsView *speedView;
+@property (weak, nonatomic) IBOutlet VSCStatsView *batteryPercentageView;
+
+
 @end
 
 @implementation StatsViewController
@@ -26,15 +30,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor blackColor];
-    self.voltsLabel.textColor = [UIColor whiteColor];
-    self.ampsLabel.textColor = [UIColor whiteColor];
-    self.celciusLabel.textColor = [UIColor whiteColor];
-    self.speedLabel.textColor = [UIColor whiteColor];
-    self.batteryLabel.textColor = [UIColor whiteColor];
-    
     // Do any additional setup after loading the view, typically from a nib.
     [VSCBluetoothHelper sharedInstance].delegate = self;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    self.ampsView.hasSubLabel = YES;
+    self.celcuisView.hasSubLabel = YES;
+    self.speedView.hasSubLabel = YES;
+    
     if ([VSCBluetoothHelper sharedInstance].status == VSCBluetoothStatusReady) {
         [self fetchVescData];
     }
@@ -50,7 +54,7 @@
 
 -(void)onBluetoothStatusChanged:(VSCBluetoothStatus)status {
     if (status == VSCBluetoothStatusReady) {
-        [self fetchVescData];
+        [self performSelector:@selector(fetchVescData) withObject:nil afterDelay:5];
     }
 }
 
@@ -60,13 +64,27 @@
     [data getBytes:&newData length:sizeof(newData)];
     
     NSLog(@"VESC COMMUNICATION OK");
-    NSLog(@"INPUT VOLTAGE: %@", [NSString stringWithFormat:@"%0.1f volts", newData.inpVoltage]);
-    self.voltsLabel.text = [NSString stringWithFormat:@"%0.1f V", newData.inpVoltage];
-    self.ampsLabel.text = [NSString stringWithFormat:@"%0.1f A", newData.avgMotorCurrent];
-    self.celciusLabel.text = [NSString stringWithFormat:@"%0.1f °C", newData.temp_pcb];
-    self.speedLabel.text = [NSString stringWithFormat:@"%d km/u", [VSCStatsHelper calculateSpeed:newData.rpm]];
     
-    [self performSelector:@selector(fetchVescData) withObject:nil afterDelay:.5];
+    VSCStatsHelper *statsHelper = [VSCStatsHelper sharedInstance];
+    statsHelper.amps = newData.avgInputCurrent;
+    statsHelper.celcius = newData.temp_pcb;
+    statsHelper.speed = [VSCStatsHelper calculateSpeed:newData.rpm];
+    
+    self.voltsView.mainLabel.text = [NSString stringWithFormat:@"%0.1f V", newData.inpVoltage];
+    
+    self.ampsView.mainLabel.text = [NSString stringWithFormat:@"%0.1f A", statsHelper.amps];
+    self.ampsView.subLabel.text = [NSString stringWithFormat:@"Max: %0.1f A", statsHelper.maxAmps];
+    
+    self.celcuisView.mainLabel.text = [NSString stringWithFormat:@"%0.1f °C", statsHelper.celcius];
+    self.celcuisView.subLabel.text = [NSString stringWithFormat:@"Max: %0.1f °C", statsHelper.maxCelcius];
+    
+    self.speedView.mainLabel.text = [NSString stringWithFormat:@"%d km/u", statsHelper.speed];
+    self.speedView.subLabel.text = [NSString stringWithFormat:@"Max: %d km/u", statsHelper.maxSpeed];
+    
+    
+    self.batteryPercentageView.mainLabel.text = [NSString stringWithFormat:@"%d.1 %%", [VSCStatsHelper calculateBatteryStatusWithVoltage:newData.inpVoltage]];
+    
+    [self performSelector:@selector(fetchVescData) withObject:nil afterDelay:.75];
 }
 
 #pragma mark - VESC Data
@@ -75,10 +93,11 @@
     
     VSCBluetoothHelper *bluetoothHelper = [VSCBluetoothHelper sharedInstance];
     
-    NSLog(@"Fetching new data");
-    
     NSData *dataToSend = [[VSCVescHelper sharedInstance] dataForGetValues:COMM_GET_VALUES val:0];
-    if (dataToSend && bluetoothHelper.txCharacteristic) [bluetoothHelper.vescPeripheral writeValue:dataToSend forCharacteristic:bluetoothHelper.txCharacteristic type:CBCharacteristicWriteWithResponse];
+    if (dataToSend && bluetoothHelper.txCharacteristic) {
+        NSLog(@"Fetching new data A");
+        [bluetoothHelper.vescPeripheral writeValue:dataToSend forCharacteristic:bluetoothHelper.txCharacteristic type:CBCharacteristicWriteWithResponse];
+    }
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "VSCBluetoothHelper.h"
+#import "VSCUIHelper.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self updateTabBarAppearance];
+    
     return YES;
 }
 
@@ -48,6 +51,11 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)updateTabBarAppearance {
+    UITabBarController *tabController = (UITabBarController*)self.window.rootViewController;
+    tabController.tabBar.barTintColor =  UIColorFromRGB(0x040736);
 }
 
 

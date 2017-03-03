@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VSCViewController.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : VSCViewController
 
 @end
 
