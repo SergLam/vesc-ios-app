@@ -128,13 +128,103 @@
                     <view key="view" contentMode="scaleToFill" id="cKh-yT-r6S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFl-on-loq">
+                                <rect key="frame" x="105" y="374" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New trip"/>
+                                <connections>
+                                    <action selector="onNewTripPressed:" destination="v0t-Co-F9O" eventType="touchUpInside" id="aKo-cI-xRq"/>
+                                    <segue destination="rXX-B6-0D5" kind="presentation" id="GGr-tS-m8z"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Trips" image="icon-maps" selectedImage="icon-maps" id="Shy-QJ-KIX"/>
+                    <connections>
+                        <outlet property="tripButton" destination="YFl-on-loq" id="YKH-IE-NFg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obx-ZL-HC7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="790"/>
+            <point key="canvasLocation" x="-2.3999999999999999" y="789.35532233883066"/>
+        </scene>
+        <!--Trip Detail View Controller-->
+        <scene sceneID="9Ye-8t-xBd">
+            <objects>
+                <viewController id="rXX-B6-0D5" customClass="TripDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="54x-NQ-inb"/>
+                        <viewControllerLayoutGuide type="bottom" id="73g-xJ-upE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xAz-pi-h0Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Shf-2b-kaC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="293"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="293" id="V2n-Bu-XaG"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBo-gk-BQc">
+                                <rect key="frame" x="96" y="520" width="182" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="onStartPressed:" destination="rXX-B6-0D5" eventType="touchUpInside" id="rTh-Sn-V1f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQz-OS-M2P">
+                                <rect key="frame" x="96" y="571" width="182" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="onStopPressed:" destination="rXX-B6-0D5" eventType="touchUpInside" id="zws-4N-ydQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysa-o6-dek">
+                                <rect key="frame" x="78" y="338" width="219" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM0-V1-5d7">
+                                <rect key="frame" x="78" y="378" width="219" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df5-eW-kk2">
+                                <rect key="frame" x="78" y="416" width="219" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Shf-2b-kaC" firstAttribute="top" secondItem="54x-NQ-inb" secondAttribute="bottom" constant="-20" id="Gw2-wy-7G3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Shf-2b-kaC" secondAttribute="trailing" constant="-16" id="eEF-hb-0uY"/>
+                            <constraint firstItem="Shf-2b-kaC" firstAttribute="leading" secondItem="xAz-pi-h0Q" secondAttribute="leadingMargin" constant="-16" id="ruN-qf-Q9n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="distanceLabel" destination="GM0-V1-5d7" id="AHh-Ti-off"/>
+                        <outlet property="mapView" destination="Shf-2b-kaC" id="3ky-e0-f00"/>
+                        <outlet property="paceLabel" destination="df5-eW-kk2" id="reA-1D-TQT"/>
+                        <outlet property="startButton" destination="UBo-gk-BQc" id="qMS-U2-xxS"/>
+                        <outlet property="stopButton" destination="SQz-OS-M2P" id="eT5-xQ-Z1D"/>
+                        <outlet property="timeLabel" destination="Ysa-o6-dek" id="uWo-AZ-Lg1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajn-e9-RI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.3999999999999999" y="1533.2833583208396"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

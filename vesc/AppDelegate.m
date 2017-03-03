@@ -9,8 +9,12 @@
 #import "AppDelegate.h"
 #import "VSCBluetoothHelper.h"
 #import "VSCUIHelper.h"
+#import "TripsViewController.h"
+#import "VSCDataStore.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -20,6 +24,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self updateTabBarAppearance];
+    
+    [[VSCDataStore sharedInstance] setup];
+    
+    TripsViewController *tripsVc = [[((UITabBarController *)self.window.rootViewController) viewControllers] objectAtIndex:1];
+    tripsVc.managedObjectContext = self.managedObjectContext;
     
     return YES;
 }

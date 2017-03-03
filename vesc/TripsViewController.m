@@ -8,7 +8,10 @@
 
 #import "TripsViewController.h"
 
+
 @interface TripsViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *tripButton;
 
 @end
 
@@ -22,6 +25,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onNewTripPressed:(id)sender {
 }
 
 /*

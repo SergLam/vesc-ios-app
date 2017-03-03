@@ -11,4 +11,6 @@
 
 @interface TripsViewController : VSCViewController
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end

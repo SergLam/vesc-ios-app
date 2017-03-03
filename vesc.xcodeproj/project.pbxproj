@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		3636921E1E697150007FCCC2 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3636921D1E697150007FCCC2 /* TripsViewController.m */; };
 		363692211E697325007FCCC2 /* VSCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363692201E697325007FCCC2 /* VSCViewController.m */; };
+		3636923C1E697704007FCCC2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3636923A1E697704007FCCC2 /* Model.xcdatamodeld */; };
+		3636924B1E6977D6007FCCC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3636924A1E6977D5007FCCC2 /* UIKit.framework */; };
+		3636924D1E6977DD007FCCC2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3636924C1E6977DD007FCCC2 /* CoreData.framework */; };
+		3636924F1E6977E4007FCCC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3636924E1E6977E4007FCCC2 /* Foundation.framework */; };
+		363692511E6977EB007FCCC2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363692501E6977EB007FCCC2 /* CoreGraphics.framework */; };
+		363692531E6977F1007FCCC2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363692521E6977F1007FCCC2 /* MapKit.framework */; };
+		363692561E6988C9007FCCC2 /* TripDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363692551E6988C9007FCCC2 /* TripDetailViewController.m */; };
+		363692571E699482007FCCC2 /* VSCTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 363692441E6977AC007FCCC2 /* VSCTrip.m */; };
+		363692581E69948E007FCCC2 /* VSCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 363692401E6977AC007FCCC2 /* VSCLocation.m */; };
+		3636925B1E699962007FCCC2 /* VSCDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3636925A1E699962007FCCC2 /* VSCDataStore.m */; };
 		367277851E62F21E004EED03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 367277841E62F21E004EED03 /* main.m */; };
 		367277881E62F21E004EED03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 367277871E62F21E004EED03 /* AppDelegate.m */; };
 		3672778B1E62F21E004EED03 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3672778A1E62F21E004EED03 /* StatsViewController.m */; };
@@ -47,6 +57,20 @@
 		3636921D1E697150007FCCC2 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripsViewController.m; sourceTree = "<group>"; };
 		3636921F1E697325007FCCC2 /* VSCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCViewController.h; sourceTree = "<group>"; };
 		363692201E697325007FCCC2 /* VSCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCViewController.m; sourceTree = "<group>"; };
+		3636923B1E697704007FCCC2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3636923F1E6977AC007FCCC2 /* VSCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCLocation.h; path = Model/VSCLocation.h; sourceTree = "<group>"; };
+		363692401E6977AC007FCCC2 /* VSCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCLocation.m; path = Model/VSCLocation.m; sourceTree = "<group>"; };
+		363692431E6977AC007FCCC2 /* VSCTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCTrip.h; path = Model/VSCTrip.h; sourceTree = "<group>"; };
+		363692441E6977AC007FCCC2 /* VSCTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCTrip.m; path = Model/VSCTrip.m; sourceTree = "<group>"; };
+		3636924A1E6977D5007FCCC2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3636924C1E6977DD007FCCC2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3636924E1E6977E4007FCCC2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		363692501E6977EB007FCCC2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		363692521E6977F1007FCCC2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		363692541E6988C9007FCCC2 /* TripDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDetailViewController.h; sourceTree = "<group>"; };
+		363692551E6988C9007FCCC2 /* TripDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDetailViewController.m; sourceTree = "<group>"; };
+		363692591E699962007FCCC2 /* VSCDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCDataStore.h; sourceTree = "<group>"; };
+		3636925A1E699962007FCCC2 /* VSCDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCDataStore.m; sourceTree = "<group>"; };
 		367277801E62F21E004EED03 /* vesc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vesc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		367277841E62F21E004EED03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		367277861E62F21E004EED03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +106,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				363692531E6977F1007FCCC2 /* MapKit.framework in Frameworks */,
+				363692511E6977EB007FCCC2 /* CoreGraphics.framework in Frameworks */,
+				3636924F1E6977E4007FCCC2 /* Foundation.framework in Frameworks */,
+				3636924D1E6977DD007FCCC2 /* CoreData.framework in Frameworks */,
+				3636924B1E6977D6007FCCC2 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +131,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		363692381E6976E5007FCCC2 /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				363692391E6976EB007FCCC2 /* model */,
+				3636923A1E697704007FCCC2 /* Model.xcdatamodeld */,
+				363692591E699962007FCCC2 /* VSCDataStore.h */,
+				3636925A1E699962007FCCC2 /* VSCDataStore.m */,
+			);
+			name = coredata;
+			sourceTree = "<group>";
+		};
+		363692391E6976EB007FCCC2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3636923F1E6977AC007FCCC2 /* VSCLocation.h */,
+				363692401E6977AC007FCCC2 /* VSCLocation.m */,
+				363692431E6977AC007FCCC2 /* VSCTrip.h */,
+				363692441E6977AC007FCCC2 /* VSCTrip.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		363692491E6977D5007FCCC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				363692521E6977F1007FCCC2 /* MapKit.framework */,
+				363692501E6977EB007FCCC2 /* CoreGraphics.framework */,
+				3636924E1E6977E4007FCCC2 /* Foundation.framework */,
+				3636924C1E6977DD007FCCC2 /* CoreData.framework */,
+				3636924A1E6977D5007FCCC2 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		367277771E62F21E004EED03 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +172,7 @@
 				3672779F1E62F21E004EED03 /* vescTests */,
 				367277AA1E62F21E004EED03 /* vescUITests */,
 				367277811E62F21E004EED03 /* Products */,
+				363692491E6977D5007FCCC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +189,7 @@
 		367277821E62F21E004EED03 /* vesc */ = {
 			isa = PBXGroup;
 			children = (
+				363692381E6976E5007FCCC2 /* coredata */,
 				36AE6EA01E63048A00BE724D /* ui */,
 				36AE6E9E1E63047300BE724D /* helpers */,
 				367277861E62F21E004EED03 /* AppDelegate.h */,
@@ -204,6 +269,8 @@
 				3636921D1E697150007FCCC2 /* TripsViewController.m */,
 				3636921F1E697325007FCCC2 /* VSCViewController.h */,
 				363692201E697325007FCCC2 /* VSCViewController.m */,
+				363692541E6988C9007FCCC2 /* TripDetailViewController.h */,
+				363692551E6988C9007FCCC2 /* TripDetailViewController.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -297,6 +364,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 7D25U96YQ3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					3672779B1E62F21E004EED03 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -365,7 +437,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3672778E1E62F21E004EED03 /* SettingsViewController.m in Sources */,
+				363692581E69948E007FCCC2 /* VSCLocation.m in Sources */,
 				36A48C291E6328BF00F03A70 /* VSCStatsHelper.m in Sources */,
+				363692571E699482007FCCC2 /* VSCTrip.m in Sources */,
 				363692211E697325007FCCC2 /* VSCViewController.m in Sources */,
 				36AE6EA51E63077900BE724D /* VSCVescHelper.m in Sources */,
 				367277881E62F21E004EED03 /* AppDelegate.m in Sources */,
@@ -374,7 +448,10 @@
 				367277851E62F21E004EED03 /* main.m in Sources */,
 				3636921E1E697150007FCCC2 /* TripsViewController.m in Sources */,
 				36E991F21E671E580082361F /* VSCStatsView.m in Sources */,
+				3636925B1E699962007FCCC2 /* VSCDataStore.m in Sources */,
+				363692561E6988C9007FCCC2 /* TripDetailViewController.m in Sources */,
 				36E0E14C1E686DDD00B19096 /* VSCUIHelper.m in Sources */,
+				3636923C1E697704007FCCC2 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +708,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3636923A1E697704007FCCC2 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3636923B1E697704007FCCC2 /* Model.xcdatamodel */,
+			);
+			currentVersion = 3636923B1E697704007FCCC2 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 367277781E62F21E004EED03 /* Project object */;
 }
