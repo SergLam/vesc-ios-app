@@ -26,6 +26,7 @@
     [self updateTabBarAppearance];
     
     [[VSCDataStore sharedInstance] setup];
+    [VSCBluetoothHelper sharedInstance];
     
     TripsViewController *tripsVc = [[((UITabBarController *)self.window.rootViewController) viewControllers] objectAtIndex:1];
     tripsVc.managedObjectContext = self.managedObjectContext;
