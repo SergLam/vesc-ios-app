@@ -111,8 +111,6 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.activityType = CLActivityTypeFitness;
     
-    NSLog(@"=== LOCATION MANAGER: %@", self.locationManager);
-    
     // Movement threshold for new events.
     self.locationManager.distanceFilter = 10; // meters
     
@@ -142,8 +140,6 @@
     newTrip.locations = [NSOrderedSet orderedSetWithArray:locationArray];
     self.trip = newTrip;
     
-    NSLog(@"%@", newTrip);
-    
     [[VSCDataStore sharedInstance] saveContext];
     
     
@@ -156,8 +152,6 @@
 #pragma mark - Location delegate
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
- 
-    NSLog(@"LOCATION MANAGER DID UPDATE");
     
     for (CLLocation *newLocation in locations) {
         NSDate *eventDate = newLocation.timestamp;
@@ -195,6 +189,7 @@
 
 - (IBAction)onStopPressed:(id)sender {
     [self setStatus:VSCTripStatusStopped];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Setters

@@ -16,8 +16,7 @@
 
 static VSCDataStore *sharedInstance = nil;
 
-+ (VSCDataStore *)sharedInstance
-{
++ (VSCDataStore *)sharedInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[super alloc] init];
@@ -42,14 +41,10 @@ static VSCDataStore *sharedInstance = nil;
 }
 
 - (void)saveContext {
-    //    NSLog(@"[UKDatastore] saveContext");
     NSError *error = nil;
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            
-            NSLog(@"error is %@",error);
-            
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -60,7 +55,6 @@ static VSCDataStore *sharedInstance = nil;
 
 // this is called via observing "NSManagedObjectContextDidSaveNotification"
 - (void)mergeChanges:(NSNotification *)notification {
-    
     if (notification.object != self.managedObjectContext) {
         [self performSelectorOnMainThread:@selector(updateMainContext:) withObject:notification waitUntilDone:NO];
     }
@@ -88,8 +82,7 @@ static VSCDataStore *sharedInstance = nil;
 
 // Returns the managed object context for the application.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
-- (NSManagedObjectContext *)managedObjectContext
-{
+- (NSManagedObjectContext *)managedObjectContext {
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
@@ -113,26 +106,9 @@ static VSCDataStore *sharedInstance = nil;
     return _managedObjectContext;
 }
 
-/*
- - (void)handleDataModelChange:(NSNotification *)notification
- {
- if ([notification.object isEqual:self.managedObjectContext]) {
- NSSet *updatedObjects = [[notification userInfo] objectForKey:NSUpdatedObjectsKey];
- NSSet *deletedObjects = [[notification userInfo] objectForKey:NSDeletedObjectsKey];
- NSSet *insertedObjects = [[notification userInfo] objectForKey:NSInsertedObjectsKey];
- NSLog(@"%%%%%%%%%% CONTEXT CHANGE");
- NSLog(@"updated objects %@",updatedObjects);
- NSLog(@"deleted objects %@",deletedObjects);
- NSLog(@"inserted objects  %@",insertedObjects);
- 
- }
- }
- */
-
 // Returns the managed object model for the application.
 // If the model doesn't already exist, it is created from the application's model.
-- (NSManagedObjectModel *)managedObjectModel
-{
+- (NSManagedObjectModel *)managedObjectModel {
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
@@ -212,7 +188,6 @@ static int setupFailedCount = 0;
          */
         //        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         //        abort();
-        
         
     } else {
         NSLog(@"[VSCDataStore] PSC set up properly");

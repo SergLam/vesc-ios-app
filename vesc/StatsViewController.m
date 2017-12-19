@@ -63,8 +63,6 @@
     struct bldcMeasure newData;
     [data getBytes:&newData length:sizeof(newData)];
     
-    NSLog(@"VESC COMMUNICATION OK");
-    
     VSCStatsHelper *statsHelper = [VSCStatsHelper sharedInstance];
     statsHelper.amps = newData.avgInputCurrent;
     statsHelper.celcius = newData.temp_pcb;
@@ -95,7 +93,6 @@
     
     NSData *dataToSend = [[VSCVescHelper sharedInstance] dataForGetValues:COMM_GET_VALUES val:0];
     if (dataToSend && bluetoothHelper.txCharacteristic) {
-        NSLog(@"Fetching new data A");
         [bluetoothHelper.vescPeripheral writeValue:dataToSend forCharacteristic:bluetoothHelper.txCharacteristic type:CBCharacteristicWriteWithResponse];
     }
 }

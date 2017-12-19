@@ -31,14 +31,10 @@
 }
 
 -(void)setup {
-    
-    NSLog(@"=== VESC BLUETOOTH HELPER INIT");
-    
     // Scan for all available CoreBluetooth LE devices
     self.services = @[[CBUUID UUIDWithString:UART_SERVICE_UUID], [CBUUID UUIDWithString:DEVICE_INFO_UUID]];
     CBCentralManager *centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
     self.centralManager = centralManager;
-    
 }
 
 
@@ -51,8 +47,6 @@
     [peripheral discoverServices:nil];
     self.isConnected = peripheral.state == CBPeripheralStateConnected;
     NSString *statusString = self.isConnected ? @"CoreBluetooth BLE Connected" : @"CoreBluetooth BLE Not Connected";
-    NSLog(@"%@", statusString);
-    
 }
 
 // CBCentralManagerDelegate - This is called with the CBPeripheral class as its main input parameter. This contains most of the information there is to know about a BLE peripheral.
@@ -61,8 +55,6 @@
     NSString *localName = [advertisementData objectForKey:CBAdvertisementDataLocalNameKey];
     
     if ([localName length] > 0) {
-        NSLog(@"Found the VESC preipheral: %@", localName);
-//        self.statusLabel.text = @"CoreBluetooth BLE Found";
         self.vescPeripheral = peripheral;
         
         peripheral.delegate = self;
@@ -92,25 +84,19 @@
     
     // Determine the state of the peripheral
     if ([central state] == CBManagerStatePoweredOff) {
-        NSLog(@"CoreBluetooth BLE hardware is powered off");
         [self setStatus:VSCBluetoothStatusError];
     }
     else if ([central state] == CBManagerStatePoweredOn) {
-        NSLog(@"CoreBluetooth BLE hardware is powered on and ready");
         [self.centralManager scanForPeripheralsWithServices:self.services options:nil];
-        NSLog(@"%@", self.services);
         [self setStatus:VSCBluetoothStatusScanning];
     }
     else if ([central state] == CBManagerStateUnauthorized) {
-        NSLog(@"CoreBluetooth BLE state is unauthorized");
         [self setStatus:VSCBluetoothStatusError];
     }
     else if ([central state] == CBManagerStateUnknown) {
-        NSLog(@"CoreBluetooth BLE state is unknown");
         [self setStatus:VSCBluetoothStatusError];
     }
     else if ([central state] == CBManagerStateUnsupported) {
-        NSLog(@"CoreBluetooth BLE hardware is unsupported on this platform");
         [self setStatus:VSCBluetoothStatusError];
     }
     
@@ -121,7 +107,6 @@
 // CBPeripheralDelegate - Invoked when you discover the peripheral's available services.
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
     for (CBService *service in peripheral.services) {
-        NSLog(@"Discovered service: %@", service.UUID);
         [peripheral discoverCharacteristics:nil forService:service];
     }
 }
@@ -133,7 +118,6 @@
         
         for (CBCharacteristic *aChar in service.characteristics) {
             if ([aChar.UUID isEqual:[CBUUID UUIDWithString:TX_CHARACTERISTIC_UUID]]) {
-                NSLog(@"Found TX service");
                 self.txCharacteristic = aChar;
                 
                 if (self.rxCharacteristic != nil){
@@ -141,7 +125,6 @@
                 }
                 
             } else if ([aChar.UUID isEqual:[CBUUID UUIDWithString:RX_CHARACTERISTIC_UUID]]) {
-                NSLog(@"Found RX service");
                 self.rxCharacteristic = aChar;
                 [self.vescPeripheral setNotifyValue:YES forCharacteristic:_rxCharacteristic];
                 
@@ -153,16 +136,11 @@
         }
         
         if (_txCharacteristic == nil && _rxCharacteristic == nil) {
-            NSLog(@"RX and TX not discovered. Closing connection.");
             [self.centralManager cancelPeripheralConnection:self.vescPeripheral];
         }
         
     } else if ([service.UUID isEqual:[CBUUID UUIDWithString:DEVICE_INFO_UUID]]) {
-        NSLog(@"Discovered Device Info");
-        
-        for (CBCharacteristic *aChar in service.characteristics)
-        {
-            NSLog(@"Found device service: %@", aChar.UUID);
+        for (CBCharacteristic *aChar in service.characteristics) {
             [self.vescPeripheral readValueForCharacteristic:aChar];
         }
     }
@@ -171,18 +149,13 @@
 // Invoked when you retrieve a specified characteristic's value, or when the peripheral device notifies your app that the characteristic's value has changed.
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
     if (error) {
-        NSLog(@"Error receiving notification for characteristic %@: %@", characteristic, error);
         [self setStatus:VSCBluetoothStatusError];
         return;
     }
     
     VSCVescHelper *vescHelper = [VSCVescHelper sharedInstance];
     
-    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:TX_CHARACTERISTIC_UUID]]) { // 1
-        // TX
-        NSLog(@"TX update value");
-        
-    } else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RX_CHARACTERISTIC_UUID]]) {
+    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RX_CHARACTERISTIC_UUID]]) {
         // RX
         
         if ([vescHelper processIncomingBytes:characteristic.value] > 0) {
@@ -198,7 +171,6 @@
             }
             
             if (values.fault_code == FAULT_CODE_NO_DATA) {
-                NSLog(@"Error");
                 [self setStatus:VSCBluetoothStatusError];
             }
         }
