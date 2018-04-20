@@ -14,8 +14,10 @@
 #import "VSCViewController.h"
 
 typedef NS_ENUM(NSInteger, VSCTripStatus) {
+    VSCTripStatusWaiting,
     VSCTripStatusStopped,
-    VSCTripStatusRunning
+    VSCTripStatusRunning,
+    VSCTripStatusReview
 };
 
 @interface TripDetailViewController : VSCViewController

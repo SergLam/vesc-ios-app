@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
@@ -53,12 +54,33 @@
     self.distanceLabel.textColor = [UIColor whiteColor];
     self.paceLabel.textColor = [UIColor whiteColor];
     
+    self.timeLabel.text = @"";
+    self.distanceLabel.text = @"";
+    self.paceLabel.text = @"";
+    
     [self updateView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.timer invalidate];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.trip) {
+        [self.mapView setRegion:[self mapRegion]];
+        // make the line(s!) on the map
+        [self.mapView addOverlay:[self polyLine]];
+        
+        self.timeLabel.text = [NSString stringWithFormat:@"Time: %@",  [VSCStatsHelper stringifySecondCount:self.trip.duration usingLongFormat:NO]];
+        self.distanceLabel.text = [NSString stringWithFormat:@"Distance: %@", [VSCStatsHelper stringifyDistance:self.trip.distance]];
+        self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [VSCStatsHelper stringifyAvgPaceFromDist:self.trip.distance overTime:self.trip.duration]];
+    } else {
+        if (self.locationManager == nil) {
+            [self startLocationUpdates];
+        }
+    }
 }
 
 
@@ -71,11 +93,17 @@
         self.locations = [NSMutableArray array];
         self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0) target:self
                                                     selector:@selector(eachSecond) userInfo:nil repeats:YES];
-        [self startLocationUpdates];
+        
+        if (self.locationManager == nil) {
+            [self startLocationUpdates];
+        }
         
     } else if(self.status == VSCTripStatusStopped) {
         [self.locationManager stopUpdatingLocation];
-        [self saveTrip];
+        
+        if (self.locations.count > 0) {
+            [self saveTrip];
+        }
     }
     
     [self updateView];
@@ -83,9 +111,13 @@
 }
 
 -(void)updateView {
-    self.timeLabel.hidden = self.status == VSCTripStatusStopped;
-    self.distanceLabel.hidden = self.status == VSCTripStatusStopped;
-    self.paceLabel.hidden = self.status == VSCTripStatusStopped;
+    self.timeLabel.hidden = self.status == VSCTripStatusWaiting;
+    self.distanceLabel.hidden = self.status == VSCTripStatusWaiting;
+    self.paceLabel.hidden = self.status == VSCTripStatusWaiting;
+    
+    self.startButton.hidden = self.status == VSCTripStatusReview || self.status == VSCTripStatusRunning;
+    self.stopButton.hidden = self.status == VSCTripStatusReview || self.status == VSCTripStatusWaiting;
+    self.closeButton.hidden = self.status == VSCTripStatusRunning;
 }
 
 #pragma mark - Trip timers 
@@ -106,7 +138,9 @@
         self.locationManager = [[CLLocationManager alloc] init];
     }
     
-    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager setAllowsBackgroundLocationUpdates:YES];
+    [self.locationManager setPausesLocationUpdatesAutomatically:NO];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.activityType = CLActivityTypeFitness;
@@ -144,7 +178,6 @@
     
     
     [self.mapView setRegion:[self mapRegion]];
-    
     // make the line(s!) on the map
     [self.mapView addOverlay:[self polyLine]];
 }
@@ -152,6 +185,11 @@
 #pragma mark - Location delegate
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    
+    if (self.status == VSCTripStatusWaiting && locations.count > 0) {
+        [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(locations.firstObject.coordinate, 500, 500) animated:YES];
+        return;
+    }
     
     for (CLLocation *newLocation in locations) {
         NSDate *eventDate = newLocation.timestamp;
@@ -168,8 +206,7 @@
                 coords[0] = ((CLLocation *)self.locations.lastObject).coordinate;
                 coords[1] = newLocation.coordinate;
                 
-                MKCoordinateRegion region =
-                MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 500, 500);
+                MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 500, 500);
                 [self.mapView setRegion:region animated:YES];
                 
                 [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords count:2]];
@@ -192,13 +229,19 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)onClosePressed:(id)sender {
+    [self.locationManager stopUpdatingLocation];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 #pragma mark - Setters
 
 -(void)setTrip:(VSCTrip *)trip {
     
     if (_trip != trip) {
         _trip = trip;
-        [self updateView];
+        [self setStatus:VSCTripStatusReview];
     }
 }
 

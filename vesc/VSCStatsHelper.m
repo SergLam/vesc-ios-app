@@ -62,15 +62,15 @@ static float const metersInMile = 1609.344;
     return 0.00328084*(mm);
 }
 
-- (int) mphToKph: (int)mph {
++ (int) mphToKph: (int)mph {
     return 1.609344*(mph);
 }
 
-- (float) FToC: (float *)F {
++ (float) FToC: (float *)F {
     return (*F-32)/1.8;
 }
 
-- (float) CToF: (float *)C {
++ (float) CToF: (float *)C {
     return (*C*1.8)+32;
 }
 
