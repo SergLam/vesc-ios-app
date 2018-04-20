@@ -15,6 +15,7 @@
 @interface VSCTrip : NSManagedObject
 
 @property (nonatomic) float distance;
+@property (nonatomic) float amphours;
 @property (nonatomic) int16_t duration;
 @property (nullable, nonatomic, copy) NSDate *timestamp;
 @property (nullable, nonatomic, retain) NSOrderedSet<VSCLocation *> *locations;

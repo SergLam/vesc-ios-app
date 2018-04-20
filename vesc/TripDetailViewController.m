@@ -156,10 +156,12 @@
 - (void)saveTrip {
     
     VSCTrip *newTrip = [VSCTrip newObject];
+    VSCStatsHelper *helper = [VSCStatsHelper sharedInstance];
     
     newTrip.distance = self.distance;
     newTrip.duration = self.seconds;
     newTrip.timestamp = [NSDate date];
+    newTrip.amphours = helper.maxAmpHours;
     
     NSMutableArray *locationArray = [NSMutableArray array];
     for (CLLocation *location in self.locations) {

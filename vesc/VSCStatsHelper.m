@@ -40,6 +40,14 @@ static float const metersInMile = 1609.344;
     }
 }
 
+-(void)setAmpHours:(float)ampHours {
+    _ampHours = ampHours;
+    
+    if (ampHours >= _maxAmpHours) {
+        _maxAmpHours = ampHours;
+    }
+}
+
 -(void)setCelcius:(float)celcius {
     _celcius = celcius;
     

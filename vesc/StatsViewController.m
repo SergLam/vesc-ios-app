@@ -65,6 +65,7 @@
     
     VSCStatsHelper *statsHelper = [VSCStatsHelper sharedInstance];
     statsHelper.amps = newData.avgInputCurrent;
+    statsHelper.ampHours = newData.ampHours;
     statsHelper.celcius = newData.temp_pcb;
     statsHelper.speed = [VSCStatsHelper calculateSpeed:newData.rpm];
     

@@ -16,6 +16,7 @@
 @dynamic duration;
 @dynamic timestamp;
 @dynamic locations;
+@dynamic amphours;
 
 +(VSCTrip *)newObject {
     return [self newObject:[VSCDataStore sharedInstance].managedObjectContext];

@@ -53,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		362A0A61208A278A001CAA9A /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		3636921C1E697150007FCCC2 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripsViewController.h; sourceTree = "<group>"; };
 		3636921D1E697150007FCCC2 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripsViewController.m; sourceTree = "<group>"; };
 		3636921F1E697325007FCCC2 /* VSCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCViewController.h; sourceTree = "<group>"; };
@@ -615,7 +616,7 @@
 				DEVELOPMENT_TEAM = T498LZB8L9;
 				INFOPLIST_FILE = vesc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kersvers.vesc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renesijnke.vesc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -630,7 +631,7 @@
 				DEVELOPMENT_TEAM = T498LZB8L9;
 				INFOPLIST_FILE = vesc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kersvers.vesc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renesijnke.vesc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -731,9 +732,10 @@
 		3636923A1E697704007FCCC2 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				362A0A61208A278A001CAA9A /* Model 2.xcdatamodel */,
 				3636923B1E697704007FCCC2 /* Model.xcdatamodel */,
 			);
-			currentVersion = 3636923B1E697704007FCCC2 /* Model.xcdatamodel */;
+			currentVersion = 362A0A61208A278A001CAA9A /* Model 2.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

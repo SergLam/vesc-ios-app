@@ -15,6 +15,9 @@
 @property (nonatomic) float amps;
 @property (nonatomic) float maxAmps;
 
+@property (nonatomic) float ampHours;
+@property (nonatomic) float maxAmpHours;
+
 @property (nonatomic) float celcius;
 @property (nonatomic) float maxCelcius;
 
