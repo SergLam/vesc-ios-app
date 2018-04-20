@@ -65,7 +65,7 @@
 
 -(void)updateTabBarAppearance {
     UITabBarController *tabController = (UITabBarController*)self.window.rootViewController;
-    tabController.tabBar.barTintColor =  UIColorFromRGB(0x040736);
+    tabController.tabBar.barTintColor =  UIColorFromRGB(0xFBD250);
 }
 
 
