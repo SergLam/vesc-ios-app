@@ -363,7 +363,7 @@
 				TargetAttributes = {
 					3672777F1E62F21E004EED03 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = T498LZB8L9;
+						DevelopmentTeam = NZLKM4J25L;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -390,6 +390,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -613,10 +614,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T498LZB8L9;
+				DEVELOPMENT_TEAM = NZLKM4J25L;
 				INFOPLIST_FILE = vesc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.renesijnke.vesc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.serglam.vesc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -628,10 +629,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T498LZB8L9;
+				DEVELOPMENT_TEAM = NZLKM4J25L;
 				INFOPLIST_FILE = vesc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.renesijnke.vesc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.se.vesc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

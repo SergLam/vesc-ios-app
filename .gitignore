@@ -4,7 +4,14 @@
 
 ## Build generated
 build/
-DerivedData
+DerivedData/
+
+R.generated.swift
+*.generated.swift
+vesc/BundleFiles/R.generated.swift
+./vesc/BundleFiles/R.generated.swift
+vesc/vesc/BundleFiles/R.generated.swift
+./vesc/vesc/BundleFiles/R.generated.swift
 
 ## Various settings
 *.pbxuser
@@ -15,17 +22,22 @@ DerivedData
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
+xcuserdata/
 
 ## Other
-*.xccheckout
 *.moved-aside
-*.xcuserstate
+*.xccheckout
 *.xcscmblueprint
+*.xcodeproj/xcuserdata/*
+*.xcworkspace/xcuserdata/*
+*.xcworkspace/xcshareddata/*
+xcuserdata/
 
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
+*.dSYM.zip
+*.dSYM
 
 ## Playgrounds
 timeline.xctimeline
@@ -34,7 +46,9 @@ playground.xcworkspace
 # Swift Package Manager
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
+Packages/
+Package.pins
+Package.resolved
 .build/
 
 # CocoaPods
@@ -43,13 +57,12 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-# Pods/
+Pods/
 
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
+Carthage/Checkouts
 Carthage/Build
 
 # fastlane
@@ -57,9 +70,16 @@ Carthage/Build
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
 # screenshots whenever they are needed.
 # For more information about the recommended setup visit:
-# https://github.com/fastlane/fastlane/blob/master/docs/Gitignore.md
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
 
 fastlane/report.xml
-fastlane/screenshots
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+fastlane/build
+fastlane/signing
+vendor/
+screenshots/
 
+#Mac OS
 .DS_Store
