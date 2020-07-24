@@ -59,10 +59,10 @@
 		3636921F1E697325007FCCC2 /* VSCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCViewController.h; sourceTree = "<group>"; };
 		363692201E697325007FCCC2 /* VSCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCViewController.m; sourceTree = "<group>"; };
 		3636923B1E697704007FCCC2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		3636923F1E6977AC007FCCC2 /* VSCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCLocation.h; path = Model/VSCLocation.h; sourceTree = "<group>"; };
-		363692401E6977AC007FCCC2 /* VSCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCLocation.m; path = Model/VSCLocation.m; sourceTree = "<group>"; };
-		363692431E6977AC007FCCC2 /* VSCTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCTrip.h; path = Model/VSCTrip.h; sourceTree = "<group>"; };
-		363692441E6977AC007FCCC2 /* VSCTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCTrip.m; path = Model/VSCTrip.m; sourceTree = "<group>"; };
+		3636923F1E6977AC007FCCC2 /* VSCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCLocation.h; sourceTree = "<group>"; };
+		363692401E6977AC007FCCC2 /* VSCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCLocation.m; sourceTree = "<group>"; };
+		363692431E6977AC007FCCC2 /* VSCTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCTrip.h; sourceTree = "<group>"; };
+		363692441E6977AC007FCCC2 /* VSCTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCTrip.m; sourceTree = "<group>"; };
 		3636924A1E6977D5007FCCC2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3636924C1E6977DD007FCCC2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3636924E1E6977E4007FCCC2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,10 +92,10 @@
 		367277AD1E62F21E004EED03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36A48C271E6328BF00F03A70 /* VSCStatsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCStatsHelper.h; sourceTree = "<group>"; };
 		36A48C281E6328BF00F03A70 /* VSCStatsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCStatsHelper.m; sourceTree = "<group>"; };
-		36AE6E9B1E63045D00BE724D /* VSCBluetoothHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCBluetoothHelper.h; path = Helpers/VSCBluetoothHelper.h; sourceTree = "<group>"; };
-		36AE6E9C1E63045D00BE724D /* VSCBluetoothHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCBluetoothHelper.m; path = Helpers/VSCBluetoothHelper.m; sourceTree = "<group>"; };
-		36AE6EA31E63077900BE724D /* VSCVescHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCVescHelper.h; path = Helpers/VSCVescHelper.h; sourceTree = "<group>"; };
-		36AE6EA41E63077900BE724D /* VSCVescHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCVescHelper.m; path = Helpers/VSCVescHelper.m; sourceTree = "<group>"; };
+		36AE6E9B1E63045D00BE724D /* VSCBluetoothHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCBluetoothHelper.h; sourceTree = "<group>"; };
+		36AE6E9C1E63045D00BE724D /* VSCBluetoothHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCBluetoothHelper.m; sourceTree = "<group>"; };
+		36AE6EA31E63077900BE724D /* VSCVescHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCVescHelper.h; sourceTree = "<group>"; };
+		36AE6EA41E63077900BE724D /* VSCVescHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCVescHelper.m; sourceTree = "<group>"; };
 		36E0E14A1E686DDD00B19096 /* VSCUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCUIHelper.h; sourceTree = "<group>"; };
 		36E0E14B1E686DDD00B19096 /* VSCUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCUIHelper.m; sourceTree = "<group>"; };
 		36E991F01E671E580082361F /* VSCStatsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCStatsView.h; sourceTree = "<group>"; };
@@ -132,28 +132,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		363692381E6976E5007FCCC2 /* coredata */ = {
-			isa = PBXGroup;
-			children = (
-				363692391E6976EB007FCCC2 /* model */,
-				3636923A1E697704007FCCC2 /* Model.xcdatamodeld */,
-				363692591E699962007FCCC2 /* VSCDataStore.h */,
-				3636925A1E699962007FCCC2 /* VSCDataStore.m */,
-			);
-			name = coredata;
-			sourceTree = "<group>";
-		};
-		363692391E6976EB007FCCC2 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				3636923F1E6977AC007FCCC2 /* VSCLocation.h */,
-				363692401E6977AC007FCCC2 /* VSCLocation.m */,
-				363692431E6977AC007FCCC2 /* VSCTrip.h */,
-				363692441E6977AC007FCCC2 /* VSCTrip.m */,
-			);
-			name = model;
-			sourceTree = "<group>";
-		};
 		363692491E6977D5007FCCC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,26 +168,16 @@
 		367277821E62F21E004EED03 /* vesc */ = {
 			isa = PBXGroup;
 			children = (
-				363692381E6976E5007FCCC2 /* coredata */,
-				36AE6EA01E63048A00BE724D /* ui */,
-				36AE6E9E1E63047300BE724D /* helpers */,
-				367277861E62F21E004EED03 /* AppDelegate.h */,
-				367277871E62F21E004EED03 /* AppDelegate.m */,
-				3672778F1E62F21E004EED03 /* Main.storyboard */,
-				367277921E62F21E004EED03 /* Assets.xcassets */,
-				367277941E62F21E004EED03 /* LaunchScreen.storyboard */,
-				367277971E62F21E004EED03 /* Info.plist */,
-				367277831E62F21E004EED03 /* Supporting Files */,
+				7C48765F24CAD617005F0FA4 /* Resources */,
+				7C48765C24CAD5D2005F0FA4 /* Services */,
+				7C48765B24CAD5A6005F0FA4 /* AppDelegate */,
+				7C48765A24CAD598005F0FA4 /* Application */,
+				7C48765824CAD4EC005F0FA4 /* BundleFiles */,
+				7C48765724CAD235005F0FA4 /* ReusableViews */,
+				7C48765624CAD218005F0FA4 /* UserStory */,
+				7C48765424CAD1D9005F0FA4 /* CoreData */,
 			);
 			path = vesc;
-			sourceTree = "<group>";
-		};
-		367277831E62F21E004EED03 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				367277841E62F21E004EED03 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		3672779F1E62F21E004EED03 /* vescTests */ = {
@@ -230,38 +198,32 @@
 			path = vescUITests;
 			sourceTree = "<group>";
 		};
-		36AE6E9E1E63047300BE724D /* helpers */ = {
+		7C48765424CAD1D9005F0FA4 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				36AE6EA21E63076700BE724D /* vesc */,
-				36AE6E9F1E63048400BE724D /* bluetooth */,
-				36E0E14A1E686DDD00B19096 /* VSCUIHelper.h */,
-				36E0E14B1E686DDD00B19096 /* VSCUIHelper.m */,
+				7C48765524CAD1F8005F0FA4 /* Model */,
+				3636923A1E697704007FCCC2 /* Model.xcdatamodeld */,
+				363692591E699962007FCCC2 /* VSCDataStore.h */,
+				3636925A1E699962007FCCC2 /* VSCDataStore.m */,
 			);
-			name = helpers;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
-		36AE6E9F1E63048400BE724D /* bluetooth */ = {
+		7C48765524CAD1F8005F0FA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				36AE6E9B1E63045D00BE724D /* VSCBluetoothHelper.h */,
-				36AE6E9C1E63045D00BE724D /* VSCBluetoothHelper.m */,
+				3636923F1E6977AC007FCCC2 /* VSCLocation.h */,
+				363692401E6977AC007FCCC2 /* VSCLocation.m */,
+				363692431E6977AC007FCCC2 /* VSCTrip.h */,
+				363692441E6977AC007FCCC2 /* VSCTrip.m */,
 			);
-			name = bluetooth;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		36AE6EA01E63048A00BE724D /* ui */ = {
+		7C48765624CAD218005F0FA4 /* UserStory */ = {
 			isa = PBXGroup;
 			children = (
-				36E991EF1E671E460082361F /* views */,
-				36AE6EA11E63049300BE724D /* viewcontrollers */,
-			);
-			name = ui;
-			sourceTree = "<group>";
-		};
-		36AE6EA11E63049300BE724D /* viewcontrollers */ = {
-			isa = PBXGroup;
-			children = (
+				3672778F1E62F21E004EED03 /* Main.storyboard */,
 				367277891E62F21E004EED03 /* StatsViewController.h */,
 				3672778A1E62F21E004EED03 /* StatsViewController.m */,
 				3672778C1E62F21E004EED03 /* SettingsViewController.h */,
@@ -273,10 +235,64 @@
 				363692541E6988C9007FCCC2 /* TripDetailViewController.h */,
 				363692551E6988C9007FCCC2 /* TripDetailViewController.m */,
 			);
-			name = viewcontrollers;
+			path = UserStory;
 			sourceTree = "<group>";
 		};
-		36AE6EA21E63076700BE724D /* vesc */ = {
+		7C48765724CAD235005F0FA4 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				36E991F01E671E580082361F /* VSCStatsView.h */,
+				36E991F11E671E580082361F /* VSCStatsView.m */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		7C48765824CAD4EC005F0FA4 /* BundleFiles */ = {
+			isa = PBXGroup;
+			children = (
+				367277941E62F21E004EED03 /* LaunchScreen.storyboard */,
+				7C48765924CAD534005F0FA4 /* Plist */,
+			);
+			path = BundleFiles;
+			sourceTree = "<group>";
+		};
+		7C48765924CAD534005F0FA4 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				367277971E62F21E004EED03 /* Info.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		7C48765A24CAD598005F0FA4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				367277841E62F21E004EED03 /* main.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		7C48765B24CAD5A6005F0FA4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				367277861E62F21E004EED03 /* AppDelegate.h */,
+				367277871E62F21E004EED03 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		7C48765C24CAD5D2005F0FA4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				36E0E14A1E686DDD00B19096 /* VSCUIHelper.h */,
+				36E0E14B1E686DDD00B19096 /* VSCUIHelper.m */,
+				7C48765E24CAD5F1005F0FA4 /* Bluetooth */,
+				7C48765D24CAD5DA005F0FA4 /* VESC */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7C48765D24CAD5DA005F0FA4 /* VESC */ = {
 			isa = PBXGroup;
 			children = (
 				36A48C271E6328BF00F03A70 /* VSCStatsHelper.h */,
@@ -284,16 +300,32 @@
 				36AE6EA31E63077900BE724D /* VSCVescHelper.h */,
 				36AE6EA41E63077900BE724D /* VSCVescHelper.m */,
 			);
-			name = vesc;
+			path = VESC;
 			sourceTree = "<group>";
 		};
-		36E991EF1E671E460082361F /* views */ = {
+		7C48765E24CAD5F1005F0FA4 /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				36E991F01E671E580082361F /* VSCStatsView.h */,
-				36E991F11E671E580082361F /* VSCStatsView.m */,
+				36AE6E9B1E63045D00BE724D /* VSCBluetoothHelper.h */,
+				36AE6E9C1E63045D00BE724D /* VSCBluetoothHelper.m */,
 			);
-			name = views;
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		7C48765F24CAD617005F0FA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7C48766024CAD629005F0FA4 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7C48766024CAD629005F0FA4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				367277921E62F21E004EED03 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,12 +390,12 @@
 		367277781E62F21E004EED03 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Rene Sijnke";
 				TargetAttributes = {
 					3672777F1E62F21E004EED03 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = NZLKM4J25L;
+						DevelopmentTeam = MDWBDEPC5G;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -387,10 +419,9 @@
 			};
 			buildConfigurationList = 3672777B1E62F21E004EED03 /* Build configuration list for PBXProject "vesc" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -521,6 +552,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -528,6 +560,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -574,6 +607,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -581,6 +615,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -614,8 +649,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NZLKM4J25L;
-				INFOPLIST_FILE = vesc/Info.plist;
+				DEVELOPMENT_TEAM = MDWBDEPC5G;
+				INFOPLIST_FILE = vesc/BundleFiles/Plist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.serglam.vesc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -629,10 +664,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NZLKM4J25L;
-				INFOPLIST_FILE = vesc/Info.plist;
+				DEVELOPMENT_TEAM = MDWBDEPC5G;
+				INFOPLIST_FILE = vesc/BundleFiles/Plist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.se.vesc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.serglam.vesc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
